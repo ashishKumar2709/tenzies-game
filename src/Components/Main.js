@@ -35,7 +35,8 @@ function Main() {
         setDiceValue(pre=>pre.map(ele=>{
             return tenzies?newDiceValue():ele.isHeld? ele:newDiceValue()
         }))
-        setRolls(pre=>pre+1)
+        tenzies?setRolls(0):setRolls(pre=>pre+1)
+        console.log(rolls)
         setTenzies(pre=>pre?!pre:pre)
     }
     function holdDice(ids){
